@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .accordionWrapper .ant-collapse {
+    @apply border-0;
+  }
+  .accordionWrapper .ant-collapse .ant-collapse-header {
+    @apply rounded-[20px] bg-white font-mon shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] !important;
+  }
+  .accordionWrapper .ant-collapse .ant-collapse-item {
+    @apply mb-[29px];
+  }
+  .accordionWrapper .ant-collapse .ant-collapse-content {
+    @apply rounded-[20px] bg-white font-mon shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] pt-8 !important;
+  }
+}
+
 @font-face {
   font-family: Montserrat;
   src: url(/fonts/Montserrat/Montserrat-Regular.otf);
@@ -17,6 +32,22 @@
 @font-face {
   font-family: MontserratBold;
   src: url(/fonts/Montserrat/Montserrat-Bold.otf);
+}
+@font-face {
+  font-family: SpaceMono;
+  src: url(/fonts//Space-Mono//SpaceMono-Regular.ttf);
+}
+@font-face {
+  font-family: SpaceMonoBold;
+  src: url(/fonts//Space-Mono//SpaceMono-Bold.ttf);
+}
+@font-face {
+  font-family: Arimo;
+  src: url(/fonts/Arimo/Arimo-Regular.ttf);
+}
+@font-face {
+  font-family: ArimoBold;
+  src: url(/fonts/Arimo/Arimo-Bold.ttf);
 }
 
 body {

@@ -3,6 +3,12 @@ import { ReasonToSellPattern, RightArrow } from "@/util/icons";
 import Image from "next/image";
 import React from "react";
 import CustomersImg from "../../public/images/people.png";
+import DigitalProductImg from "../../public/images/DigitalProduct.svg";
+import PhysicalProductImg from "../../public/images/PhysicalProduct.svg";
+import EastPaymentImg from "../../public/images/EasyProduct.svg";
+import FastDeliveryImg from "../../public/images/FastProduct.svg";
+import FaqSection from "@/components/FaqSection";
+import Footer from "@/components/Footer";
 
 const startProduct = [
   {
@@ -18,6 +24,33 @@ const startProduct = [
     title: "Start selling",
     content:
       "Share your store link, start sellng and accept payment in digital or physical currency",
+  },
+];
+
+const reasonToSell = [
+  {
+    title: "Digital product ",
+    content:
+      "amplify your digital offerings by joining our platform to connect with tech-savvy consumer seeking innovative digital solutions.",
+    images: DigitalProductImg,
+  },
+  {
+    title: "Physical product ",
+    content:
+      "expand your digital your market reach by showcasing your high quality physical product on our platform, reaching eager customer globally",
+    images: PhysicalProductImg,
+  },
+  {
+    title: "Easy payment method",
+    content:
+      "optimize your sales with our seamless payment methods, empowering you to receive payments hassle free and efficiently with crptocurrency and fiat money.",
+    images: EastPaymentImg,
+  },
+  {
+    title: "Fast delivery",
+    content:
+      "enhance customer satisfaction by leveraging our rapid delivery service, ensuring your products reach buyers promptly fostering a positive buying experience with our logistic partner quikpik",
+    images: FastDeliveryImg,
   },
 ];
 
@@ -79,6 +112,7 @@ export default function HomePage() {
           </button>
           <div>
             <Image
+              className="mx-auto"
               src={CustomersImg}
               alt="Customers"
               width={370}
@@ -95,11 +129,42 @@ export default function HomePage() {
 
       <section>
         <div className="container mx-auto px-4 md:px-10 py-6">
-          <div className="float-right">
-            <ReasonToSellPattern />
+          <div className="mb-3">
+            <div className="w-fit ms-auto">
+              <ReasonToSellPattern />
+            </div>
+          </div>
+          <h4 className="text-black text-[26px] text-center font-space-bold leading-[40px] mb-[42px]">
+            Reasons why you should sell with{" "}
+            <span className="text-[#FE7A00]">shoptinga</span>
+          </h4>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 md:gap-10">
+            {reasonToSell.map((sell, index) => (
+              <article key={index} className="flex">
+                <div>
+                  <Image src={sell.images} alt={sell.title} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg text-black font-space-bold mb-[13px]">
+                    {sell.title}
+                  </p>
+                  <p className="font-space text-[#57595A] text-sm">
+                    {sell.content}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-3 pb-4">
+            <div className="w-fit ms-auto">
+              <ReasonToSellPattern />
+            </div>
           </div>
         </div>
       </section>
+      <FaqSection />
+      <Footer />
     </main>
   );
 }

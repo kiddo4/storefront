@@ -15,9 +15,14 @@ const config: Config = {
       },
       fontFamily: {
         inter: ["Inter var"],
+        "mon": ["Montserrat"],
         "mon-medium": ["MontserratMedium"],
         "mon-semibold": ["MontserratSemiBold"],
-        "mon-bold": ["MontserratBold"]
+        "mon-bold": ["MontserratBold"],
+        "space": ["SpaceMono"],
+        "space-bold": ["SpaceMonoBold"],
+        "arimo": ["Arimo"],
+        "arimo-bold": ["ArimoBold"],
       },
     },
   },
