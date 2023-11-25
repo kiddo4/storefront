@@ -4,7 +4,7 @@
 /* @import "bootstrap/dist/css/bootstrap.min.css"; */
 
 @layer utilities {
-  .accordionWrapper .ant-collapse {
+  /* .accordionWrapper .ant-collapse {
     @apply border-0;
   }
   .accordionWrapper .accordion .accordion-header .accordion-button {
@@ -15,7 +15,7 @@
   }
   .accordionWrapper .ant-collapse .ant-collapse-content {
     @apply rounded-[20px] bg-white font-mon shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] pt-8 !important;
-  }
+  } */
 }
 
 @font-face {
@@ -53,6 +53,37 @@
 
 body {
   font-family: Montserrat, Inter;
+}
+
+.accordionWrapper .accordion .accordion-item {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 29px;
+}
+
+.accordionWrapper .accordion .accordion-header .accordion-button {
+  font-family: Montserrat;
+  color: #000;
+  border-radius: 20px !important;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.accordionWrapper .accordion .accordion-collapse {
+  font-family: Montserrat;
+  font-size: 13px;
+  color: #222;
+  border-radius: 20px !important;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding-top: 32px;
+}
+
+.accordionWrapper .accordion .accordion-button::after {
+  background-image: url("/images/plus.svg");
+}
+.accordionWrapper .accordion .accordion-button:not(.collapsed)::after {
+  transform: rotate(45deg);
 }
 
 /* :root {
