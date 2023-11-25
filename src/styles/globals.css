@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Montserrat;
+  src: url(/fonts/Montserrat/Montserrat-Regular.otf);
+}
+@font-face {
+  font-family: MontserratMedium;
+  src: url(/fonts/Montserrat/Montserrat-Medium.otf);
+}
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url(/fonts/Montserrat/Montserrat-SemiBold.otf);
+}
+@font-face {
+  font-family: MontserratBold;
+  src: url(/fonts/Montserrat/Montserrat-Bold.otf);
+}
+
+body {
+  font-family: Montserrat, Inter;
+}
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
