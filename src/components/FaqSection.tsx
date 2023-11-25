@@ -1,77 +1,104 @@
-"use client";
 import { PlusIcon, SearchIcon } from "@/util/icons";
 import React from "react";
-import type { CollapseProps } from "antd";
-// import { Collapse } from "antd";
-import dynamic from "next/dynamic";
-
-const Collapse = dynamic(async () => await import("antd/es/carousel"), {
-  ssr: false,
-});
-
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
-const items: CollapseProps["items"] = [
-  {
-    key: "1",
-    label: "This is panel header 1",
-    children: <p>{text}</p>,
-  },
-  {
-    key: "2",
-    label: "This is panel header 2",
-    children: <p>{text}</p>,
-  },
-  {
-    key: "3",
-    label: "This is panel header 3",
-    children: <p>{text}</p>,
-  },
-];
+import { Accordion } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function FaqSection() {
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
 
+  const items = [
+    {
+      key: "1",
+      label: "What is shoptinga",
+      children: (
+        <p>
+          shoptinga has been crafted as an operating system that seamlessly
+          integrates with both digital and physical products, providing a
+          platform that not only facilities transactions but also enhances the
+          overall experience for both buyers and sellers. this innovative system
+          is dedicated to creating a sense of ease and empowerment by
+          streamlining the interaction between consumers and empowerment by
+          streamlining between consumers and product in in the ever evolving
+          marketplace.
+        </p>
+      ),
+    },
+    {
+      key: "2",
+      label: "can i sell physical product on shoptinga?",
+      children: (
+        <p>
+          yes, the shoptinga storefront empower you to effortlessly sell
+          physical products, harnessing the capabilities pf the shoptinga
+          platform.
+        </p>
+      ),
+    },
+    {
+      key: "3",
+      label: "is it only  fiat i can pay with ?",
+      children: (
+        <p>
+          shoptinga offers a dual payment system, allowing you the flexibility
+          to choose between traditional fiat currency or cryptocurrency for your
+          transactions.
+        </p>
+      ),
+    },
+    {
+      key: "4",
+      label: "what type of digital product can i sell?",
+      children: (
+        <p>
+          With shoptinga you can sell all kinds of digital products like ebooks,
+          online courses, music, softwares, digital arts, mobile apps, games,
+          movies and tv shows, virtual events and more .
+        </p>
+      ),
+    },
+    {
+      key: "5",
+      label: "Are they any fees for using shoptinga ?",
+      children: (
+        <p>
+          certainly, sellers csn enjoy a complimentary 3 month free trial period
+          with shoptinga. Following this trial, a monthly subscription of 2000
+          naira is applicable.
+        </p>
+      ),
+    },
+  ];
+
   return (
-    <section className="bg-gradient-to-b from-[rgba(0,0,0,0.20)] to-[rgba(0,0,0,0.20)] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-      <div className="container mx-auto px-4 md:px-10 py-6 md:py-10">
-        <p className="text-black text-center font-mon-semibold mb-[38px]">
-          FAQ’S
-        </p>
-        <p className="text-black text-center font-mon-semibold">
-          Frequently asked questions
-        </p>
-        <div className="w-[231px] h-10 flex items-center justify-center gap-[10px] border border-white rounded mx-auto my-[38px]">
-          <SearchIcon />
-          <div className="">
-            <input
-              type="text"
-              className="w-full h-10 bg-transparent border-0 outline-0 placeholder:text-black"
-              placeholder="search"
-            />
-          </div>
-        </div>
-        <div className="accordionWrapper">
-          <Collapse
-            items={items}
-            defaultActiveKey={["1"]}
-            expandIcon={({ isActive }: any) => (
-              <PlusIcon rotate={isActive ? 45 : 0} />
-            )}
-            expandIconPosition="end"
-            onChange={onChange}
-          />
-        </div>
-        <button className="w-[194.995px] h-[60px] block text-[#FF8701] text-sm font-mon-bold border-[1.5px] border-[#FF8601] rounded mx-auto mt-[38px]">
-          See More FAQS
-        </button>
-      </div>
-    </section>
+    <div className="accordionWrapper">
+      <Accordion defaultActiveKey="0">
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Accordion Item #1</Accordion.Header>
+          <Accordion.Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>Accordion Item #2</Accordion.Header>
+          <Accordion.Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </div>
   );
 }

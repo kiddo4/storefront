@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "bootstrap/dist/css/bootstrap.min.css"; */
 
 @layer utilities {
   .accordionWrapper .ant-collapse {
     @apply border-0;
   }
-  .accordionWrapper .ant-collapse .ant-collapse-header {
+  .accordionWrapper .accordion .accordion-header .accordion-button {
     @apply rounded-[20px] bg-white font-mon shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] !important;
   }
   .accordionWrapper .ant-collapse .ant-collapse-item {

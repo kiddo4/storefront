@@ -237,7 +237,7 @@ export const LinkedinIcon = () => {
   );
 };
 
-export const PlusIcon = ({ rotate = 0 }) => {
+export const PlusIcon = ({ rotate = "0deg" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +245,7 @@ export const PlusIcon = ({ rotate = 0 }) => {
       height="40"
       viewBox="0 0 40 40"
       fill="none"
-      style={{ transform: `rotate(${rotate}deg)` }}
+      style={{ transform: `rotate(${rotate})` }}
     >
       <g clip-path="url(#clip0_298_94)">
         <path

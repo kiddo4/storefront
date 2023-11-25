@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { ReasonToSellPattern, RightArrow } from "@/util/icons";
+import { ReasonToSellPattern, RightArrow, SearchIcon } from "@/util/icons";
 import Image from "next/image";
 import React from "react";
 import CustomersImg from "../../public/images/people.png";
@@ -143,7 +143,13 @@ export default function HomePage() {
             {reasonToSell.map((sell, index) => (
               <article key={index} className="flex">
                 <div>
-                  <Image src={sell.images} alt={sell.title} />
+                  <Image
+                    src={sell.images}
+                    alt={sell.title}
+                    width={50}
+                    height={50}
+                    priority
+                  />
                 </div>
                 <div className="flex-1">
                   <p className="text-lg text-black font-space-bold mb-[13px]">
@@ -163,7 +169,32 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <FaqSection />
+
+      <section className="bg-gradient-to-b from-[rgba(0,0,0,0.20)] to-[rgba(0,0,0,0.20)] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        <div className="container mx-auto px-4 md:px-10 py-6 md:py-10">
+          <p className="text-black text-center font-mon-semibold mb-[38px]">
+            FAQ’S
+          </p>
+          <p className="text-black text-center font-mon-semibold">
+            Frequently asked questions
+          </p>
+          <div className="w-[231px] h-10 flex items-center justify-center gap-[10px] border border-white rounded mx-auto my-[38px]">
+            <SearchIcon />
+            <div className="">
+              <input
+                type="text"
+                className="w-full h-10 bg-transparent border-0 outline-0 placeholder:text-black"
+                placeholder="search"
+              />
+            </div>
+          </div>
+          <FaqSection />
+          <button className="w-[194.995px] h-[60px] block text-[#FF8701] text-sm font-mon-bold border-[1.5px] border-[#FF8601] rounded mx-auto mt-[38px]">
+            See More FAQS
+          </button>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
