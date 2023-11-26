@@ -57,10 +57,37 @@ const reasonToSell = [
 ];
 
 export default function HomePage() {
+  const [reloadCounter, setReloadCounter] = useState(0);
   const [formData, setFormData] = useState({
     email: "",
   });
+  useEffect(() => {
+    const reloadInterval = setInterval(() => {
+      // Reload the backend by making a request to keep it alive
+      fetch('https://shoptinga.onrender.com') // Replace with your backend URL
+        .then(response => {
+          if (response.ok) {
+            console.log('Backend reloaded successfully.');
+          } else {
+            console.error('Failed to reload backend.');
+          }
+        })
+        .catch(error => {
+          console.error('Error reloading backend:', error);
+        });
 
+      setReloadCounter((prevCounter) => prevCounter + 1);
+    }, 720000); // 12 minutes in milliseconds
+
+    // Cleanup on component unmount
+    return () => clearInterval(reloadInterval);
+  }, []);
+
+  useEffect(() => {
+    // Additional logic that depends on the backend reload
+    // ...
+
+  }, [reloadCounter]);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
