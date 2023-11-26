@@ -148,7 +148,7 @@ export default function HomePage() {
               <input
                 type="text"
                 className="w-full bg-transparent border-0 outline-0 text-[13px]"
-                placeholder="Email Join Now"
+                placeholder="Email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
