@@ -5,10 +5,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>The operating system for you and your products - shoptinga</title>
-          
-        </Head>
+       
+        <Head />
         <body>
           <Main />
           <NextScript />
