@@ -39,19 +39,19 @@ const reasonToSell = [
   {
     title: "Physical product ",
     content:
-      "expand your digital your market reach by showcasing your high quality physical product on our platform, reaching eager customer globally",
+      "expand your market reach by showcasing your high quality physical product on our platform, reaching eager customer globally",
     images: PhysicalProductImg,
   },
   {
     title: "Easy payment method",
     content:
-      "optimize your sales with our seamless payment methods, empowering you to receive payments hassle free and efficiently with crptocurrency and fiat money.",
+      "optimize your sales with our seamless payment methods, empowering you to receive payments hassle free and efficiently with fiat money and cryptocurrency.",
     images: EastPaymentImg,
   },
   {
     title: "Fast delivery",
     content:
-      "enhance customer satisfaction by leveraging our rapid delivery service, ensuring your products reach buyers promptly fostering a positive buying experience with our logistic partner quikpik",
+      "enhance customer satisfaction by leveraging our rapid delivery service, ensuring your products reach buyers promptly fostering a positive buying experience with our logistic partner quImprove customer contentment by utilizing our swift delivery service, guaranteeing timely product delivery to customers and creating a favorable purchasing experience in collaboration with our logistics partner, KwikPik.",
     images: FastDeliveryImg,
   },
 ];
@@ -133,8 +133,8 @@ export default function HomePage() {
         <Navbar />
         <div className="container mx-auto px-4 md:px-10 flex-1 flex flex-col items-center justify-center">
           <p className="text-white text-sm text-center font-inter">
-            &quot;Unlock Your Business Potential with Shoptinga storefront
-            &quot;
+            Unlock Your Business Potential with Shoptinga storefront
+            
           </p>
           <h4 className="text-2xl text-white text-center font-inter font-semibold my-[30px]">
             Join the waitlist !!!

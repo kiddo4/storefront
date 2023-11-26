@@ -31,7 +31,7 @@ export default function FaqSection() {
       children: (
         <p>
           yes, the shoptinga storefront empower you to effortlessly sell
-          physical products, harnessing the capabilities pf the shoptinga
+          physical products, harnessing the capabilities of the shoptinga
           platform.
         </p>
       ),
@@ -63,9 +63,8 @@ export default function FaqSection() {
       label: "Are they any fees for using shoptinga ?",
       children: (
         <p>
-          certainly, sellers csn enjoy a complimentary 3 month free trial period
-          with shoptinga. Following this trial, a monthly subscription of 2000
-          naira is applicable.
+          certainly, sellers can enjoy a complimentary 3 month free trial period
+          with shoptinga. Following this trial, there is a monthly subscription applicable.
         </p>
       ),
     },
