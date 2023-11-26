@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <>
       <Head>
-        <title>The operating system for you and your products - Shoptinga</title>
+        {/* <title>The operating system for you and your products - Shoptinga</title> */}
         <link
           rel="shortcut icon"
           href="Shoptinga-icon.jpeg"
