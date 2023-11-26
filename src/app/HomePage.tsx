@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { ReasonToSellPattern, RightArrow, SearchIcon } from "@/util/icons";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CustomersImg from "../../public/images/people.png";
 import DigitalProductImg from "../../public/images/DigitalProduct.svg";
 import PhysicalProductImg from "../../public/images/PhysicalProduct.svg";
@@ -9,6 +9,8 @@ import EastPaymentImg from "../../public/images/EasyProduct.svg";
 import FastDeliveryImg from "../../public/images/FastProduct.svg";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const startProduct = [
   {
@@ -55,6 +57,76 @@ const reasonToSell = [
 ];
 
 export default function HomePage() {
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmitEmail = async (e: any) => {
+    e.preventDefault();
+
+    // Fetch POST request
+    try {
+      const response = await fetch(
+        "https://shoptinga.onrender.com/api/waitlist/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // Add any other headers as needed
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
+        const responseData = await response.json();
+        setFormData(responseData.email);
+        console.log("Data posted successfully:", responseData);
+        toast.success("Your email submitted successfully", {
+          position: "top-right",
+          autoClose: 3000, // milliseconds
+        });
+
+        setFormData({
+          email: "",
+          // Reset other form fields as needed
+        });
+        return responseData;
+      } else {
+        toast.error("Error getting email", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+      }
+
+      // .then((data) => {
+      // Handle the response data as needed
+      // if (data.ok) {
+      //   return toast.success("Data posted successfully", {
+      //     position: "top-right",
+      //     autoClose: 3000, // milliseconds
+      //   });
+      // } else {
+      //   toast.error("Failed to post data", {
+      //     position: "top-right",
+      //     autoClose: 3000,
+      //   });
+      // }
+      //   setFormData(data);
+      // })
+    } catch (error: any) {
+      console.error("Error:", error);
+      toast.error("Error posting email", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    }
+  };
+
   return (
     <main>
       <header className="h-screen flex flex-col bg-[url('/images/Background.png')] bg-no-repeat bg-[length:100%_100%]">
@@ -75,11 +147,17 @@ export default function HomePage() {
             <div className="flex-1 ">
               <input
                 type="text"
-                className="w-full border-0 outline-0 text-[13px]"
+                className="w-full bg-transparent border-0 outline-0 text-[13px]"
                 placeholder="Email Join Now"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
               />
             </div>
-            <button className="h-[58.551px] w-[116px] flex justify-center items-center flex-nowrap text-[13px] text-white bg-[#FEA500] rounded-[10px]">
+            <button
+              onClick={handleSubmitEmail}
+              className="h-[58.551px] w-[116px] flex justify-center items-center flex-nowrap text-[13px] text-white bg-[#FEA500] rounded-[10px]"
+            >
               <span>Join Now</span> <RightArrow />
             </button>
           </div>
@@ -196,6 +274,8 @@ export default function HomePage() {
       </section>
 
       <Footer />
+
+      <ToastContainer />
     </main>
   );
 }
