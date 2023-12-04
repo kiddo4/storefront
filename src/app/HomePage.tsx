@@ -99,7 +99,7 @@ export default function HomePage() {
     // Fetch POST request
     try {
       const response = await fetch(
-        "https://shoptinga.onrender.com/api/waitlist/",
+        "https://gateway.shoptinga.com/api/waitlist/",
         {
           method: "POST",
           headers: {
