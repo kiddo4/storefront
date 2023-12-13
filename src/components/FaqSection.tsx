@@ -36,19 +36,9 @@ export default function FaqSection() {
         </p>
       ),
     },
+    
     {
       key: "3",
-      label: "is it only  fiat i can pay with ?",
-      children: (
-        <p>
-          shoptinga offers a dual payment system, allowing you the flexibility
-          to choose between traditional fiat currency or cryptocurrency for your
-          transactions.
-        </p>
-      ),
-    },
-    {
-      key: "4",
       label: "what type of digital product can i sell?",
       children: (
         <p>
@@ -59,7 +49,7 @@ export default function FaqSection() {
       ),
     },
     {
-      key: "5",
+      key: "4",
       label: "Are they any fees for using shoptinga ?",
       children: (
         <p>
